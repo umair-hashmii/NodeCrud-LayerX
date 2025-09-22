@@ -1,12 +1,14 @@
 // ...existing code...
-const { HttpError } = require('./utilits/httpError');
 // ...existing code...
+// ...existing code...
+const { HttpError } = require('./lib/utils/httpError');
+// ...existing code...// ...existing code...// ...existing code...
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const logger = require('./config/logger');
-const usersRouter = require('./routes/users');
+const logger = require('./lib/config/logger');
+const usersRouter = require('./lib/routes/users');
 
 
 const app = express();
