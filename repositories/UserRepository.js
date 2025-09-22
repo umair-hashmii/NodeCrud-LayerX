@@ -3,8 +3,8 @@ const UserModel = require('../models/UserModel');
 class UserRepository {
   constructor() {
     this.users = [
-      new UserModel("1", "Ali Khan", "ali@example.com", new Date().toISOString()),
-      new UserModel("2", "Sara Ahmed", "sara@example.com", new Date().toISOString())
+      new UserModel("1", "Umair Hashmi ", "ali@example.com", new Date().toISOString()),
+      new UserModel("2", "Ali Ahmed", "sara@example.com", new Date().toISOString())
     ];
   }
 

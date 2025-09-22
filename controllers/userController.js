@@ -1,13 +1,17 @@
-const { userService } = require('../services/userService');
+const { userService } = require('../services/userService.js');
 const ResponseModel = require('../models/ResponseModel');
 
 class UserController {
     async getAllUsers(req, res) {
         try {
             const users = await userService.getAllUsers();
-            res.json(new ResponseModel(true, "Users retrieved successfully", users));
+            if (!users) {
+                return res.status(404).json(new ResponseModel(false, "No users found"));
+            }
+            return res.status(200).json(new ResponseModel(true, "Users retrieved successfully", users));
         } catch (error) {
-            res.status(500).json(new ResponseModel(false, error.message));
+            console.error('Error in getAllUsers:', error);
+            return res.status(500).json(new ResponseModel(false, "Internal server error"));
         }
     }
 
