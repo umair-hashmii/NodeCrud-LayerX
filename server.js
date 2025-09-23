@@ -7,6 +7,8 @@ const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+
+
 const logger = require('./lib/config/logger');
 const usersRouter = require('./lib/routes/users');
 
@@ -21,7 +23,7 @@ app.use(bodyParser.json());
 
 
 app.get('/', (req, res) => res.json({ message: 'layerX users API by Umair Hashmi — alive' }));
-app.use('/users', usersRouter);
+app.use('/api/users', usersRouter);
 
 
 // 404
